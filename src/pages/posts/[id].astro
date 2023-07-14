@@ -1,0 +1,29 @@
+---
+import LayoutSample from '../../layouts/LayoutSample.astro'
+import { LinkText } from '../../components/LinkText'
+import { Heading } from '../../components/Heading'
+import { getPosts } from '../../utils/getPosts'
+import { getPost } from '../../utils/getPost'
+
+export async function getStaticPaths() {
+  const posts = await getPosts()
+
+  return posts.map((post) => ({
+    params: { id: post.id.toString() },
+  }))
+}
+
+const { id } = Astro.params
+
+const post = id && (await getPost(id))
+---
+
+<LayoutSample title={post.title}>
+  <Heading>{id}. {post.title}</Heading>
+
+  <div class="mt-4">
+    <LinkText href="/posts">POSTS</LinkText>
+
+    <div class="mt-4">{post.body}</div>
+  </div>
+</LayoutSample>

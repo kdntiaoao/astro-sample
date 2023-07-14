@@ -1,0 +1,27 @@
+---
+import LayoutSample from '../../layouts/LayoutSample.astro'
+import { LinkText } from '../../components/LinkText'
+import { Heading } from '../../components/Heading'
+import { getPosts } from '../../utils/getPosts'
+
+const posts = await getPosts()
+---
+
+<LayoutSample title="Reactサンプル">
+  <Heading>Posts</Heading>
+  <div class="mt-4">
+    <LinkText href="/">HOME</LinkText>
+
+    <ul class="mt-4">
+      {
+        posts.map((post) => (
+          <li>
+            <LinkText href={`/posts/${post.id}`}>
+              {post.id}. {post.title}
+            </LinkText>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</LayoutSample>
