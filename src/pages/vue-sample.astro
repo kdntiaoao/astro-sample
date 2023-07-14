@@ -1,0 +1,17 @@
+---
+import LayoutSample from '../layouts/LayoutSample.astro'
+import { Heading } from '../components/Heading'
+import { LinkText } from '../components/LinkText'
+import SampleVue from '../components/SampleVue.vue'
+---
+
+<LayoutSample title="Vueサンプル">
+  <main>
+    <Heading>Vueサンプル</Heading>
+
+    <div class="mt-4">
+      <LinkText href="/">HOME</LinkText>
+      <SampleVue client:only="vue" />
+    </div>
+  </main>
+</LayoutSample>
