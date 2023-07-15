@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import { LinkText } from '../components/LinkText'
 import { Heading } from '../components/Heading'
+import { resolve } from '../utils/resolve'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -10,19 +11,19 @@ import { Heading } from '../components/Heading'
 
     <ul class="mt-4">
       <li>
-        <LinkText href="/md-sample">Markdown Sample</LinkText>
+        <LinkText href={resolve('/md-sample')}>Markdown Sample</LinkText>
       </li>
       <li>
-        <LinkText href="/scss-sample">SCSS Sample</LinkText>
+        <LinkText href={resolve('/scss-sample')}>SCSS Sample</LinkText>
       </li>
       <li>
-        <LinkText href="/react-sample">React Sample</LinkText>
+        <LinkText href={resolve('/react-sample')}>React Sample</LinkText>
       </li>
       <li>
-        <LinkText href="/vue-sample">Vue Sample</LinkText>
+        <LinkText href={resolve('/vue-sample')}>Vue Sample</LinkText>
       </li>
       <li>
-        <LinkText href="/posts">Posts</LinkText>
+        <LinkText href={resolve('/posts')}>Posts</LinkText>
       </li>
     </ul>
   </main>

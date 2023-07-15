@@ -3,6 +3,7 @@ import LayoutSample from '../layouts/LayoutSample.astro'
 import { Heading } from '../components/Heading'
 import { LinkText } from '../components/LinkText'
 import SampleVue from '../components/SampleVue.vue'
+import { resolve } from '../utils/resolve'
 ---
 
 <LayoutSample title="Vueサンプル">
@@ -10,7 +11,7 @@ import SampleVue from '../components/SampleVue.vue'
     <Heading>Vueサンプル</Heading>
 
     <div class="mt-4">
-      <LinkText href="/">HOME</LinkText>
+      <LinkText href={resolve('/')}>HOME</LinkText>
       <SampleVue client:only="vue" />
     </div>
   </main>

@@ -2,12 +2,13 @@
 import LayoutSample from '../layouts/LayoutSample.astro'
 import { LinkText } from '../components/LinkText'
 import { Heading } from '../components/Heading'
+import { resolve } from '../utils/resolve'
 ---
 
 <LayoutSample title="Reactサンプル">
   <Heading>SCSSサンプル</Heading>
   <div class="mt-4">
-    <LinkText href="/">HOME</LinkText>
+    <LinkText href={resolve('/')}>HOME</LinkText>
 
     <div>
       <p class="paragraph">

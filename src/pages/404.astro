@@ -1,12 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import { LinkText } from '../components/LinkText'
+import Layout from '../layouts/Layout.astro'
+import { resolve } from '../utils/resolve'
 ---
 
 <Layout title="Welcome to Astro.">
   <main class="main">
     <h1 class="heading">存在しないページです。</h1>
-    <a href="/">トップページ</a>
+    <LinkText href={resolve('/')}>トップページ</LinkText>
   </main>
 </Layout>
 
