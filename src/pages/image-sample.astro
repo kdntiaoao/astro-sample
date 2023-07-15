@@ -1,0 +1,31 @@
+---
+import { Image } from '@astrojs/image/components'
+import LayoutSample from '../layouts/LayoutSample.astro'
+import { LinkText } from '../components/LinkText'
+import { Heading } from '../components/Heading'
+import { resolve } from '../utils/resolve'
+import sample01 from '../assets/images/sample01.jpg'
+import sample02 from '../assets/images/sample02.jpg'
+---
+
+<LayoutSample title="Reactサンプル">
+  <Heading>画像サンプル</Heading>
+  <div class="mt-4">
+    <LinkText href={resolve('/')}>HOME</LinkText>
+
+    <div class="mt-4">
+      <Image src={sample01} alt="Sample 1" class="img" />
+      <Image src={sample02} alt="Sample 2" class="img" />
+    </div>
+  </div>
+</LayoutSample>
+
+<style lang="scss">
+  .img {
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+    border: 1px solid red;
+  }
+</style>
