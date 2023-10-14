@@ -1,0 +1,64 @@
+---
+import LayoutSample from '@layouts/LayoutSample.astro'
+import { LinkText } from '@components/LinkText'
+import { Heading } from '@components/Heading'
+import { resolve } from '@utils/resolve'
+---
+
+<LayoutSample title="画像サンプル">
+  <Heading>画像サンプル</Heading>
+  <div class="mt-4">
+    <LinkText href={resolve('/')}>HOME</LinkText>
+
+    <div class="mt-4">
+      <ul class="flex gap-4 flex-wrap">
+        {
+          Array(8)
+            .fill(null)
+            .map((_, index) => (
+              <li class="my-2">
+                <h2>背景画像 {index + 1}</h2>
+                <div class={`bg-img bg${index + 1}`} />
+              </li>
+            ))
+        }
+      </ul>
+    </div>
+  </div>
+</LayoutSample>
+
+<style lang="scss">
+  .bg-img {
+    width: 400px;
+    height: 300px;
+    border: 1px solid red;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .bg1 {
+    background-image: url('../../assets/images/bg/bg01.jpg');
+  }
+  .bg2 {
+    background-image: url('../../assets/images/bg/bg02.jpg');
+  }
+  .bg3 {
+    background-image: url('../../assets/images/bg/bg03.jpg');
+  }
+  .bg4 {
+    background-image: url('../../assets/images/bg/bg04.jpg');
+  }
+  .bg5 {
+    background-image: url('../../assets/images/bg/bg05.jpg');
+  }
+  .bg6 {
+    background-image: url('../../assets/images/bg/bg06.jpg');
+  }
+  .bg7 {
+    background-image: url('../../assets/images/bg/bg07.jpg');
+  }
+  .bg8 {
+    background-image: url('../../assets/images/bg/bg08.jpg');
+  }
+</style>
