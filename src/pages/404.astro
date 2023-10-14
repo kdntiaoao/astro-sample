@@ -1,0 +1,25 @@
+---
+import { LinkText } from '@components/LinkText'
+import Layout from '@layouts/Layout.astro'
+import { resolve } from '@utils/resolve'
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="main">
+    <h1 class="heading">存在しないページです。</h1>
+    <LinkText href={resolve('/')}>トップページ</LinkText>
+  </main>
+</Layout>
+
+<style>
+  .main {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+</style>

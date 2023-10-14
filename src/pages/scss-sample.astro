@@ -1,0 +1,34 @@
+---
+import LayoutSample from '@layouts/LayoutSample.astro'
+import { LinkText } from '@components/LinkText'
+import { Heading } from '@components/Heading'
+import { resolve } from '@utils/resolve'
+---
+
+<LayoutSample title="Reactサンプル">
+  <Heading>SCSSサンプル</Heading>
+  <div class="mt-4">
+    <LinkText href={resolve('/')}>HOME</LinkText>
+
+    <div>
+      <p class="paragraph">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium nisi ut voluptate quas exercitationem
+        beatae sed architecto obcaecati esse, corporis iste impedit reprehenderit reiciendis est porro quidem. Animi,
+        blanditiis similique.
+      </p>
+    </div>
+  </div>
+</LayoutSample>
+
+<style lang="scss">
+  .paragraph {
+    border: 1px solid #aaa;
+    margin: 1rem 0;
+    padding: 1rem;
+    transition: background-color 0.3s ease-out;
+
+    &:hover {
+      background-color: blanchedalmond;
+    }
+  }
+</style>

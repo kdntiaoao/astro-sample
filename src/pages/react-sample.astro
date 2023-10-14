@@ -1,0 +1,15 @@
+---
+import LayoutSample from '@layouts/LayoutSample.astro'
+import { SampleReact } from '@components/SampleReact'
+import { LinkText } from '@components/LinkText'
+import { Heading } from '@components/Heading'
+import { resolve } from '@utils/resolve'
+---
+
+<LayoutSample title="Reactサンプル">
+  <Heading>Reactサンプル</Heading>
+  <div class="mt-4">
+    <LinkText href={resolve('/')}>HOME</LinkText>
+    <SampleReact client:only="react" />
+  </div>
+</LayoutSample>
