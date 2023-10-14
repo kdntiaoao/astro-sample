@@ -1,15 +1,13 @@
 ---
-layout: ../layouts/LayoutMd.astro
+layout: '@layouts/LayoutMd.astro'
 title: 'Markdown Sample'
 date: '2023-07-15'
 ---
 
 ## サブタイトル 1
 
-All frontmatter properties are available as props to an Astro layout component.
-
-The `layout` property is the only special one provided by Astro.
-
+All frontmatter properties are available as props to an Astro layout component.<br>
+The `layout` property is the only special one provided by Astro.<br>
 You can use it in both Markdown and MDX files located within `src/pages/`.
 
 ## サブタイトル 2
@@ -21,3 +19,16 @@ You can use it in both Markdown and MDX files located within `src/pages/`.
 - アイテム 1
 - アイテム 2
 - アイテム 3
+
+### テーブル
+
+| No. | Name          | Age | Occupation   |
+| --- | ------------- | --- | ------------ |
+| 1   | John Doe      | 25  | Developer    |
+| 2   | Jane Smith    | 30  | Designer     |
+| 3   | Alice Johnson | 28  | Photographer |
+| 4   | Bob Brown     | 32  | Manager      |
+
+### 画像
+
+![](@assets/images/sample01.jpg)

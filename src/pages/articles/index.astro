@@ -1,0 +1,47 @@
+---
+import Layout from '@layouts/Layout.astro'
+import { LinkText } from '@components/LinkText'
+import { Heading } from '@components/Heading'
+import { resolve } from '@utils/resolve'
+
+const allArticles = await Astro.glob('./*.(md|mdx)').then((articles) =>
+  articles.filter((article) => {
+    if (/test\.md$/.test(article.file)) {
+      return false
+    }
+    if (/test2\.mdx$/.test(article.file)) {
+      return false
+    }
+    return true
+  }),
+)
+const sortedAllArticles = allArticles.sort(
+  (a, b) => new Date(a.frontmatter.date).getTime() - new Date(b.frontmatter.date).getTime(),
+)
+---
+
+<Layout title="Markdown Samples">
+  <Heading>Markdown サンプル</Heading>
+
+  <div class="mt-4">
+    <LinkText href={resolve('/')}>HOME</LinkText>
+
+    <ul class="mt-4">
+      {
+        sortedAllArticles.map((article) => (
+          <li>
+            <LinkText href={article.url}>
+              {article.frontmatter.title} - {article.frontmatter.date}
+            </LinkText>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>
+
+<style>
+  main {
+    padding: 1rem;
+  }
+</style>

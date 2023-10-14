@@ -8,11 +8,10 @@ import { resolve } from '@utils/resolve'
 <Layout title="Welcome to Astro.">
   <main>
     <Heading>Welcome to Astro</Heading>
-    <p>{import.meta.env.BASE_URL}</p>
 
     <ul class="mt-4">
       <li>
-        <LinkText href={resolve('/md-sample')}>Markdown Sample</LinkText>
+        <LinkText href={resolve('/articles')}>Markdown Sample</LinkText>
       </li>
       <li>
         <LinkText href={resolve('/scss-sample')}>SCSS Sample</LinkText>
