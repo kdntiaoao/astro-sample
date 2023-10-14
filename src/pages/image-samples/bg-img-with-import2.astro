@@ -24,14 +24,14 @@ const optimizedBg07 = await getImage({ src: bg07 })
 const optimizedBg08 = await getImage({ src: bg08 })
 
 const cssVars = {
-  bg01: optimizedBg01.src,
-  bg02: optimizedBg02.src,
-  bg03: optimizedBg03.src,
-  bg04: optimizedBg04.src,
-  bg05: optimizedBg05.src,
-  bg06: optimizedBg06.src,
-  bg07: optimizedBg07.src,
-  bg08: optimizedBg08.src,
+  bg01: 'url(' + optimizedBg01.src + ')',
+  bg02: 'url(' + optimizedBg02.src + ')',
+  bg03: 'url(' + optimizedBg03.src + ')',
+  bg04: 'url(' + optimizedBg04.src + ')',
+  bg05: 'url(' + optimizedBg05.src + ')',
+  bg06: 'url(' + optimizedBg06.src + ')',
+  bg07: 'url(' + optimizedBg07.src + ')',
+  bg08: 'url(' + optimizedBg08.src + ')',
 }
 ---
 
@@ -57,7 +57,7 @@ const cssVars = {
   </div>
 </LayoutSample>
 
-<style lang="scss" define:vars=``{cssVars}>
+<style lang="scss" define:vars={cssVars}>
   .bg-img {
     width: 400px;
     height: 300px;
@@ -68,27 +68,27 @@ const cssVars = {
   }
 
   .bg1 {
-    background-image: url('../../assets/images/bg/bg01.jpg');
+    background-image: var(--bg01);
   }
   .bg2 {
-    background-image: url('../../assets/images/bg/bg02.jpg');
+    background-image: var(--bg02);
   }
   .bg3 {
-    background-image: url('../../assets/images/bg/bg03.jpg');
+    background-image: var(--bg03);
   }
   .bg4 {
-    background-image: url('../../assets/images/bg/bg04.jpg');
+    background-image: var(--bg04);
   }
   .bg5 {
-    background-image: url('../../assets/images/bg/bg05.jpg');
+    background-image: var(--bg05);
   }
   .bg6 {
-    background-image: url('../../assets/images/bg/bg06.jpg');
+    background-image: var(--bg06);
   }
   .bg7 {
-    background-image: url('../../assets/images/bg/bg07.jpg');
+    background-image: var(--bg07);
   }
   .bg8 {
-    background-image: url('../../assets/images/bg/bg08.jpg');
+    background-image: var(--bg08);
   }
 </style>
