@@ -1,7 +1,8 @@
 ---
-import Head from '../components/Head.astro'
-
 import type { MarkdownLayoutProps } from 'astro'
+import Head from '@components/Head.astro'
+import { LinkText } from '@components/LinkText'
+import { resolve } from '@utils/resolve'
 
 type Props = MarkdownLayoutProps<{
   title?: string
@@ -15,27 +16,143 @@ const {
 } = Astro.props
 ---
 
-<!DOCTYPE html>
 <html lang="ja">
   <Head title={title} />
   <body>
-    <h1>{title}</h1>
-    <p>URL: {url}</p>
-    <p>File: {file}</p>
-    <slot />
-    <p>Written on: {date}</p>
-  </body><style is:global>
-    :root {
-      --accent: 124, 58, 237;
-      --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-    }
-    html {
-      font-family: system-ui, sans-serif;
-      background-color: #f6f6f6;
-    }
-    code {
-      font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
-        Courier New, monospace;
-    }
-  </style>
+    <div class="mb-2">
+      <LinkText href={resolve('/articles')}>記事一覧</LinkText>
+    </div>
+
+    <section>
+      <header class="mb-4">
+        <h1>{title}</h1>
+
+        <p>URL: {url}</p>
+        <p>File: {file}</p>
+      </header>
+
+      <div class="markdown-content">
+        <slot />
+      </div>
+
+      <p>Written on: {date}</p>
+    </section>
+
+    <style lang="scss" is:global>
+      body {
+        padding: 1rem;
+      }
+
+      .markdown-content {
+        line-height: 1.6;
+        font-size: 16px;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          margin-top: 24px;
+          margin-bottom: 16px;
+          font-weight: bold;
+        }
+
+        h1,
+        h2 {
+          font-size: 24px;
+        }
+
+        h3 {
+          font-size: 18px;
+        }
+
+        p {
+          margin-bottom: 16px;
+          columns: 2 30em;
+        }
+
+        a {
+          color: #0070f3;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        code {
+          background-color: #f0f0f0;
+          padding: 2px 4px;
+          border-radius: 4px;
+          font-size: 90%;
+        }
+
+        pre {
+          background-color: #2d2d2d;
+          color: #f8f8f8;
+          padding: 16px;
+          border-radius: 8px;
+          overflow: auto;
+        }
+
+        ul,
+        ol {
+          margin-bottom: 16px;
+          padding-left: 2em;
+          list-style: disc;
+          li {
+            margin-bottom: 8px;
+            line-height: 1.4;
+          }
+        }
+
+        blockquote {
+          margin-left: 0;
+          margin-right: 0;
+          padding: 8px 24px;
+          border-left: 4px solid #ddd;
+          color: #888;
+          font-style: italic;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-bottom: 16px;
+
+          th,
+          td {
+            padding: 8px 12px;
+            border: 1px solid #e0e0e0;
+          }
+
+          th {
+            background-color: #f6f6f6;
+            font-weight: bold;
+          }
+        }
+
+        hr {
+          border: none;
+          height: 1px;
+          background-color: #e0e0e0;
+          margin-top: 24px;
+          margin-bottom: 24px;
+        }
+
+        img {
+          max-width: 100%;
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+    </style>
+
+    <style lang="scss">
+      h1 {
+        font-size: 32px;
+        font-weight: bold;
+      }
+    </style>
+  </body>
 </html>

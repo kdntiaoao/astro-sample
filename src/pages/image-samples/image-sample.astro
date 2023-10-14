@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets'
+import LayoutSample from '@layouts/LayoutSample.astro'
+import { LinkText } from '@components/LinkText'
+import { Heading } from '@components/Heading'
+import { resolve } from '@utils/resolve'
+import sample01 from '@assets/images/sample01.jpg'
+import sample02 from '@assets/images/sample02.jpg'
+---
+
+<LayoutSample title="Reactサンプル">
+  <Heading>画像サンプル</Heading>
+  <div class="mt-4">
+    <LinkText href={resolve('/')}>HOME</LinkText>
+
+    <div class="mt-4">
+      <section class="my-2">
+        <h2>画像の最適化済み</h2>
+        <Image src={sample01} alt="Sample 1" class="img" />
+      </section>
+      <section class="my-2">
+        <h2>生の画像</h2>
+        <img src={sample02.src} alt="Sample 2" class="img" />
+      </section>
+      <section class="my-2">
+        <h2>背景画像</h2>
+        <div class="bg-img"></div>
+      </section>
+      <section class="my-2">
+        <h2>背景画像 (import)</h2>
+        <div class="bg-img2" style={{ backgroundImage: `url(${sample02.src})` }}></div>
+      </section>
+    </div>
+  </div>
+</LayoutSample>
+
+<style lang="scss">
+  .img {
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+    border: 1px solid red;
+  }
+
+  .bg-img {
+    width: 400px;
+    height: 300px;
+    border: 1px solid red;
+    background-image: url('../../assets/images/sample02.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-img2 {
+    width: 400px;
+    height: 300px;
+    border: 1px solid red;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+</style>

@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import { LinkText } from '../components/LinkText'
-import { Heading } from '../components/Heading'
-import { resolve } from '../utils/resolve'
+import Layout from '@layouts/Layout.astro'
+import { LinkText } from '@components/LinkText'
+import { Heading } from '@components/Heading'
+import { resolve } from '@utils/resolve'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -11,7 +11,7 @@ import { resolve } from '../utils/resolve'
 
     <ul class="mt-4">
       <li>
-        <LinkText href={resolve('/md-sample')}>Markdown Sample</LinkText>
+        <LinkText href={resolve('/articles')}>Markdown Sample</LinkText>
       </li>
       <li>
         <LinkText href={resolve('/scss-sample')}>SCSS Sample</LinkText>
@@ -26,7 +26,16 @@ import { resolve } from '../utils/resolve'
         <LinkText href={resolve('/posts')}>Posts</LinkText>
       </li>
       <li>
-        <LinkText href={resolve('/image-sample')}>Image Sample</LinkText>
+        <LinkText href={resolve('/image-samples/image-sample')}>Image Sample</LinkText>
+      </li>
+      <li>
+        <LinkText href={resolve('/image-samples/bg-img-with-relative-path')}>bg-img-with-relative-path</LinkText>
+      </li>
+      <li>
+        <LinkText href={resolve('/image-samples/bg-img-with-import')}>bg-img-with-import</LinkText>
+      </li>
+      <li>
+        <LinkText href={resolve('/image-samples/bg-img-with-import2')}>bg-img-with-import2</LinkText>
       </li>
     </ul>
   </main>

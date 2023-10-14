@@ -1,0 +1,94 @@
+---
+import { getImage } from 'astro:assets'
+import LayoutSample from '@layouts/LayoutSample.astro'
+import { LinkText } from '@components/LinkText'
+import { Heading } from '@components/Heading'
+import { resolve } from '@utils/resolve'
+
+import bg01 from '@assets/images/bg/bg01.jpg'
+import bg02 from '@assets/images/bg/bg02.jpg'
+import bg03 from '@assets/images/bg/bg03.jpg'
+import bg04 from '@assets/images/bg/bg04.jpg'
+import bg05 from '@assets/images/bg/bg05.jpg'
+import bg06 from '@assets/images/bg/bg06.jpg'
+import bg07 from '@assets/images/bg/bg07.jpg'
+import bg08 from '@assets/images/bg/bg08.jpg'
+
+const optimizedBg01 = await getImage({ src: bg01 })
+const optimizedBg02 = await getImage({ src: bg02 })
+const optimizedBg03 = await getImage({ src: bg03 })
+const optimizedBg04 = await getImage({ src: bg04 })
+const optimizedBg05 = await getImage({ src: bg05 })
+const optimizedBg06 = await getImage({ src: bg06 })
+const optimizedBg07 = await getImage({ src: bg07 })
+const optimizedBg08 = await getImage({ src: bg08 })
+
+const cssVars = {
+  bg01: 'url(' + optimizedBg01.src + ')',
+  bg02: 'url(' + optimizedBg02.src + ')',
+  bg03: 'url(' + optimizedBg03.src + ')',
+  bg04: 'url(' + optimizedBg04.src + ')',
+  bg05: 'url(' + optimizedBg05.src + ')',
+  bg06: 'url(' + optimizedBg06.src + ')',
+  bg07: 'url(' + optimizedBg07.src + ')',
+  bg08: 'url(' + optimizedBg08.src + ')',
+}
+---
+
+<LayoutSample title="画像サンプル">
+  <Heading>画像サンプル</Heading>
+  <div class="mt-4">
+    <LinkText href={resolve('/')}>HOME</LinkText>
+
+    <div class="mt-4">
+      <ul class="flex gap-4 flex-wrap">
+        {
+          Array(8)
+            .fill(null)
+            .map((_, index) => (
+              <li class="my-2">
+                <h2>背景画像 {index + 1}</h2>
+                <div class={`bg-img bg${index + 1}`} />
+              </li>
+            ))
+        }
+      </ul>
+    </div>
+  </div>
+</LayoutSample>
+
+<style lang="scss" define:vars={cssVars}>
+  .bg-img {
+    width: 400px;
+    height: 300px;
+    border: 1px solid red;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .bg1 {
+    background-image: var(--bg01);
+  }
+  .bg2 {
+    background-image: var(--bg02);
+  }
+  .bg3 {
+    background-image: var(--bg03);
+  }
+  .bg4 {
+    background-image: var(--bg04);
+  }
+  .bg5 {
+    background-image: var(--bg05);
+  }
+  .bg6 {
+    background-image: var(--bg06);
+  }
+  .bg7 {
+    background-image: var(--bg07);
+  }
+  .bg8 {
+    background-image: var(--bg08);
+  }
+</style>

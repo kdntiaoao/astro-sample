@@ -3,18 +3,11 @@ import react from '@astrojs/react'
 import vue from '@astrojs/vue'
 import tailwind from '@astrojs/tailwind'
 
-import image from '@astrojs/image'
+import mdx from '@astrojs/mdx'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    react(),
-    vue(),
-    tailwind(),
-    image({
-      serviceEntryPoint: '@astrojs/image/sharp',
-    }),
-  ],
+  base: 'test',
   outDir: './dist/test',
-  base: '/test',
+  integrations: [react(), vue(), tailwind(), mdx()],
 })
