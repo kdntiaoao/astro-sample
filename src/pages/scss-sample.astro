@@ -1,12 +1,14 @@
 ---
-import LayoutSample from '@layouts/LayoutSample.astro'
+import SampleLayout from '@layouts/SampleLayout.astro'
 import { LinkText } from '@components/LinkText'
 import { Heading } from '@components/Heading'
 import { resolve } from '@utils/resolve'
+
+const title = 'SCSSサンプル'
 ---
 
-<LayoutSample title="Reactサンプル">
-  <Heading>SCSSサンプル</Heading>
+<SampleLayout title={title}>
+  <Heading>{title}</Heading>
   <div class="mt-4">
     <LinkText href={resolve('/')}>HOME</LinkText>
 
@@ -18,7 +20,7 @@ import { resolve } from '@utils/resolve'
       </p>
     </div>
   </div>
-</LayoutSample>
+</SampleLayout>
 
 <style lang="scss">
   .paragraph {

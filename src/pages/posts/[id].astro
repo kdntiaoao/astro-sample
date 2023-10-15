@@ -1,5 +1,5 @@
 ---
-import LayoutSample from '../../layouts/LayoutSample.astro'
+import SampleLayout from '../../layouts/SampleLayout.astro'
 import { LinkText } from '../../components/LinkText'
 import { Heading } from '../../components/Heading'
 import { getPosts } from '../../utils/getPosts'
@@ -21,7 +21,7 @@ const title = post ? post.title : ''
 const body = post ? post.body : ''
 ---
 
-<LayoutSample title={title}>
+<SampleLayout title={title}>
   <Heading>{id}. {title}</Heading>
 
   <div class="mt-4">
@@ -29,4 +29,4 @@ const body = post ? post.body : ''
 
     <div class="mt-4">{body}</div>
   </div>
-</LayoutSample>
+</SampleLayout>

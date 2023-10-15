@@ -1,5 +1,5 @@
 ---
-import LayoutSample from '../../layouts/LayoutSample.astro'
+import SampleLayout from '../../layouts/SampleLayout.astro'
 import { LinkText } from '../../components/LinkText'
 import { Heading } from '../../components/Heading'
 import { getPosts } from '../../utils/getPosts'
@@ -8,7 +8,7 @@ import { resolve } from '../../utils/resolve'
 const posts = await getPosts()
 ---
 
-<LayoutSample title="Posts">
+<SampleLayout title="Posts">
   <Heading>Posts</Heading>
   <div class="mt-4">
     <LinkText href={resolve('/')}>HOME</LinkText>
@@ -25,4 +25,4 @@ const posts = await getPosts()
       }
     </ul>
   </div>
-</LayoutSample>
+</SampleLayout>

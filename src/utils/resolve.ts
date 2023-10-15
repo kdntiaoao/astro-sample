@@ -1,14 +1,22 @@
-const BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, '')
+/**
+ * 末尾にスラッシュのつかない BASE_URL
+ *
+ * @type {string}
+ * @example
+ * // If import.meta.env.BASE_URL is "/test/"
+ * const baseUrl = "/test"
+ */
+export const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '')
 
-export const resolve = (path: string) => {
+export const resolve = (path: string): string => {
   const pathList = path.split('/').filter((x) => x)
   // ルートのときは/のみ
   if (!pathList.length) {
-    return BASE_URL + '/'
+    return baseUrl + '/'
   }
   // ファイルのとき
   if (/.*\..*/.test(pathList.at(-1) || '')) {
-    return BASE_URL + '/' + pathList.join('/')
+    return baseUrl + '/' + pathList.join('/')
   }
-  return BASE_URL + '/' + pathList.join('/')
+  return baseUrl + '/' + pathList.join('/')
 }

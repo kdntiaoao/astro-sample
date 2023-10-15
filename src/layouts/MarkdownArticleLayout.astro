@@ -1,0 +1,47 @@
+---
+import type { MarkdownLayoutProps } from 'astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { LinkText } from '@components/LinkText'
+import { resolve } from '@utils/resolve'
+import '@assets/styles/global.scss'
+import '@assets/styles/layout-md.scss'
+
+type Props = MarkdownLayoutProps<{
+  title?: string
+  date: string
+}>
+
+const {
+  frontmatter: { title = 'Astro Sample', date },
+  url,
+  file,
+} = Astro.props
+---
+
+<BaseLayout title={title}>
+  <div class="mb-2">
+    <LinkText href={resolve('/articles')}>記事一覧</LinkText>
+  </div>
+
+  <section>
+    <header class="mb-4">
+      <h1>{title}</h1>
+
+      <p>URL: {url}</p>
+      <p>File: {file}</p>
+    </header>
+
+    <div class="markdown-content">
+      <slot />
+    </div>
+
+    <p>Written on: {date}</p>
+  </section>
+</BaseLayout>
+
+<style lang="scss">
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+</style>

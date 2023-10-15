@@ -1,8 +1,10 @@
 ---
-import Layout from '@layouts/Layout.astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
 import { LinkText } from '@components/LinkText'
 import { Heading } from '@components/Heading'
 import { resolve } from '@utils/resolve'
+
+const title = 'Markdownサンプル'
 
 const allArticles = await Astro.glob('./*.(md|mdx)').then((articles) =>
   articles.filter((article) => {
@@ -20,8 +22,8 @@ const sortedAllArticles = allArticles.sort(
 )
 ---
 
-<Layout title="Markdown Samples">
-  <Heading>Markdown サンプル</Heading>
+<BaseLayout title={title}>
+  <Heading>{title}</Heading>
 
   <div class="mt-4">
     <LinkText href={resolve('/')}>HOME</LinkText>
@@ -38,7 +40,7 @@ const sortedAllArticles = allArticles.sort(
       }
     </ul>
   </div>
-</Layout>
+</BaseLayout>
 
 <style>
   main {

@@ -1,11 +1,11 @@
 ---
-import LayoutSample from '@layouts/LayoutSample.astro'
+import SampleLayout from '@layouts/SampleLayout.astro'
 import { LinkText } from '@components/LinkText'
 import { Heading } from '@components/Heading'
 import { resolve } from '@utils/resolve'
 ---
 
-<LayoutSample title="画像サンプル">
+<SampleLayout title="画像サンプル">
   <Heading>画像サンプル</Heading>
   <div class="mt-4">
     <LinkText href={resolve('/')}>HOME</LinkText>
@@ -25,7 +25,7 @@ import { resolve } from '@utils/resolve'
       </ul>
     </div>
   </div>
-</LayoutSample>
+</SampleLayout>
 
 <style lang="scss">
   .bg-img {

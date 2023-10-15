@@ -1,13 +1,15 @@
 ---
-import Layout from '@layouts/Layout.astro'
+import SampleLayout from '@layouts/SampleLayout.astro'
 import { LinkText } from '@components/LinkText'
 import { Heading } from '@components/Heading'
 import { resolve } from '@utils/resolve'
+
+const title = 'Astroサンプル'
 ---
 
-<Layout title="Welcome to Astro.">
+<SampleLayout title={title}>
   <main>
-    <Heading>Welcome to Astro</Heading>
+    <Heading>{title}</Heading>
 
     <ul class="mt-4">
       <li>
@@ -39,10 +41,4 @@ import { resolve } from '@utils/resolve'
       </li>
     </ul>
   </main>
-</Layout>
-
-<style>
-  main {
-    padding: 1rem;
-  }
-</style>
+</SampleLayout>

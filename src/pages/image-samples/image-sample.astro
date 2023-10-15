@@ -1,15 +1,18 @@
 ---
 import { Image } from 'astro:assets'
-import LayoutSample from '@layouts/LayoutSample.astro'
+import SampleLayout from '@layouts/SampleLayout.astro'
 import { LinkText } from '@components/LinkText'
 import { Heading } from '@components/Heading'
 import { resolve } from '@utils/resolve'
 import sample01 from '@assets/images/sample01.jpg'
 import sample02 from '@assets/images/sample02.jpg'
+
+const title = '画像サンプル'
 ---
 
-<LayoutSample title="Reactサンプル">
-  <Heading>画像サンプル</Heading>
+<SampleLayout title={title}>
+  <Heading>{title}</Heading>
+
   <div class="mt-4">
     <LinkText href={resolve('/')}>HOME</LinkText>
 
@@ -32,7 +35,7 @@ import sample02 from '@assets/images/sample02.jpg'
       </section>
     </div>
   </div>
-</LayoutSample>
+</SampleLayout>
 
 <style lang="scss">
   .img {

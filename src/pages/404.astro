@@ -1,15 +1,15 @@
 ---
 import { LinkText } from '@components/LinkText'
-import Layout from '@layouts/Layout.astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
 import { resolve } from '@utils/resolve'
 ---
 
-<Layout title="Welcome to Astro.">
+<BaseLayout title="Welcome to Astro.">
   <main class="main">
     <h1 class="heading">存在しないページです。</h1>
     <LinkText href={resolve('/')}>トップページ</LinkText>
   </main>
-</Layout>
+</BaseLayout>
 
 <style>
   .main {

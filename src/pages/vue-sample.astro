@@ -1,12 +1,12 @@
 ---
-import LayoutSample from '@layouts/LayoutSample.astro'
+import SampleLayout from '@layouts/SampleLayout.astro'
 import { Heading } from '@components/Heading'
 import { LinkText } from '@components/LinkText'
 import SampleVue from '@components/SampleVue.vue'
 import { resolve } from '@utils/resolve'
 ---
 
-<LayoutSample title="Vueサンプル">
+<SampleLayout title="Vueサンプル">
   <main>
     <Heading>Vueサンプル</Heading>
 
@@ -15,4 +15,4 @@ import { resolve } from '@utils/resolve'
       <SampleVue client:only="vue" />
     </div>
   </main>
-</LayoutSample>
+</SampleLayout>

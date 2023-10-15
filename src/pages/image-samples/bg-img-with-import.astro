@@ -1,6 +1,6 @@
 ---
 import { getImage } from 'astro:assets'
-import LayoutSample from '@layouts/LayoutSample.astro'
+import SampleLayout from '@layouts/SampleLayout.astro'
 import { LinkText } from '@components/LinkText'
 import { Heading } from '@components/Heading'
 import { resolve } from '@utils/resolve'
@@ -36,7 +36,7 @@ const bgList = [
 ]
 ---
 
-<LayoutSample title={title}>
+<SampleLayout title={title}>
   <Heading>{title}</Heading>
   <div class="mt-4">
     <LinkText href={resolve('/')}>HOME</LinkText>
@@ -54,7 +54,7 @@ const bgList = [
       </ul>
     </div>
   </div>
-</LayoutSample>
+</SampleLayout>
 
 <style lang="scss">
   .bg-img {

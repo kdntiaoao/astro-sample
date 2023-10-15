@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/LayoutMd.astro'
+layout: '@layouts/MarkdownArticleLayout.astro'
 title: 'Markdown Sample'
 date: '2023-07-15'
 ---
