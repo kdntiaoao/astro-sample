@@ -5,7 +5,7 @@ type Props = {
 
 export const LinkText = ({ children, href }: Props) => {
   return (
-    <a href={href} className="text-blue-500 underline">
+    <a href={href} className="text-blue-700 underline">
       {children}
     </a>
   )
