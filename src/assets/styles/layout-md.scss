@@ -1,3 +1,7 @@
+body {
+  padding: 1rem;
+}
+
 .markdown-content {
   line-height: 1.6;
   font-size: 16px;
@@ -13,12 +17,9 @@
     font-weight: bold;
   }
 
-  h1 {
-    font-size: 24px;
-  }
-
+  h1,
   h2 {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   h3 {
@@ -27,6 +28,7 @@
 
   p {
     margin-bottom: 16px;
+    columns: 2 30em;
   }
 
   a {
@@ -50,5 +52,56 @@
     padding: 16px;
     border-radius: 8px;
     overflow: auto;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 16px;
+    padding-left: 2em;
+    list-style: disc;
+    li {
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+  }
+
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 8px 24px;
+    border-left: 4px solid #ddd;
+    color: #888;
+    font-style: italic;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+
+    th,
+    td {
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+    }
+
+    th {
+      background-color: #f6f6f6;
+      font-weight: bold;
+    }
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
   }
 }
