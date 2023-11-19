@@ -1,0 +1,102 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { LinkText } from '@components/LinkText'
+import { resolve } from '@utils/resolve'
+import { loadDefaultJapaneseParser } from 'budoux'
+
+import '@assets/styles/global.scss'
+import '@assets/styles/layout-md.scss'
+
+const title = '旅行の楽しみ方'
+const date = '2023-07-15'
+
+const parser = loadDefaultJapaneseParser()
+---
+
+<BaseLayout title={title}>
+  <div class="card">
+    <div class="mb-2">
+      <LinkText href={resolve('/articles')}>記事一覧</LinkText>
+    </div>
+
+    <section>
+      <header class="mb-4">
+        <h1>{title}</h1>
+      </header>
+
+      <div class="markdown-content">
+        <p
+          set:html={parser.translateHTMLString(
+            '旅行は私たちの生活に新鮮な空気をもたらします。しかし、忙しい日々の中で、旅行を計画し、実行するのはなかなか難しいもの。この記事では、時間に追われる日々の中でも最高の旅行体験を得るためのヒントをご紹介します。',
+          )}
+        />
+
+        <h2>旅行計画の立て方</h2>
+
+        <h3>効率的な計画のポイント</h3>
+
+        <p>
+          旅行の成功は計画にかかっています。まず、旅行の目的を明確にしましょう。リラックスしたいのか、アドベンチャーを求めているのか、文化的な体験を望んでいるのか。目的に応じて、目的地や滞在期間、予算を決めます。
+        </p>
+
+        <h3>予算の賢い管理</h3>
+
+        <p>
+          予算を決める際には、交通費、宿泊費、食事、アクティビティの費用を考慮に入れることが大切です。また、為替レートや季節による価格変動もチェックしましょう。
+        </p>
+
+        <h2>旅行中の楽しみ方</h2>
+
+        <h3>地元の文化を体験する</h3>
+
+        <p>
+          旅行先での文化体験は、忘れられない思い出を作ります。地元の料理を試す、伝統的な行事に参加する、地元の人と交流するなど、地域固有の体験を積極的に行いましょう。
+        </p>
+
+        <h3>スケジュールはゆるく</h3>
+
+        <p>
+          予定を詰め込みすぎず、余裕を持ったスケジュールを組むことが大切です。予期せぬ発見や体験が旅の魅力を高めます。
+        </p>
+
+        <h2>旅行後の充実感</h2>
+
+        <h3>思い出を共有する</h3>
+
+        <p>
+          旅行から帰った後は、写真や体験を友人や家族と共有しましょう。また、ブログや SNS
+          でのシェアも旅の楽しみを広げる方法の一つです。
+        </p>
+
+        <h3>次の旅行計画を立てる</h3>
+
+        <p>
+          次の旅行の計画を立てることで、日常生活に新たな刺激を与えることができます。旅行は終わっても、その体験は次へとつながっていきます。
+        </p>
+
+        <p>
+          旅行は、忙しい日常から離れ、新たな発見と感動をもたらします。少しの準備と工夫で、どんなに忙しい人でも素晴らしい旅行体験を得ることができます。次の休みには、このヒントを活かして、心に残る旅をしましょう。
+        </p>
+      </div>
+
+      <p>Written on: {date}</p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .card {
+    max-width: 1000px;
+    padding: min(2rem, 3vw);
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    box-shadow: 0 0 8px rgb(0 0 0 / 10%);
+  }
+</style>

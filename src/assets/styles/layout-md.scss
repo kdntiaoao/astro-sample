@@ -1,10 +1,6 @@
-body {
-  padding: 1rem;
-}
-
 .markdown-content {
-  line-height: 1.6;
   font-size: 16px;
+  line-height: 1.6;
 
   h1,
   h2,
@@ -34,31 +30,33 @@ body {
   a {
     color: #0070f3;
     text-decoration: none;
+
     &:hover {
       text-decoration: underline;
     }
   }
 
   code {
-    background-color: #f0f0f0;
     padding: 2px 4px;
-    border-radius: 4px;
     font-size: 90%;
+    background-color: #f0f0f0;
+    border-radius: 4px;
   }
 
   pre {
-    background-color: #2d2d2d;
-    color: #f8f8f8;
     padding: 16px;
-    border-radius: 8px;
     overflow: auto;
+    color: #f8f8f8;
+    background-color: #2d2d2d;
+    border-radius: 8px;
   }
 
   ul,
   ol {
-    margin-bottom: 16px;
     padding-left: 2em;
+    margin-bottom: 16px;
     list-style: disc;
+
     li {
       margin-bottom: 8px;
       line-height: 1.4;
@@ -66,18 +64,18 @@ body {
   }
 
   blockquote {
-    margin-left: 0;
-    margin-right: 0;
     padding: 8px 24px;
-    border-left: 4px solid #ddd;
-    color: #888;
+    margin-right: 0;
+    margin-left: 0;
     font-style: italic;
+    color: #888;
+    border-left: 4px solid #ddd;
   }
 
   table {
     width: 100%;
-    border-collapse: collapse;
     margin-bottom: 16px;
+    border-collapse: collapse;
 
     th,
     td {
@@ -86,17 +84,17 @@ body {
     }
 
     th {
-      background-color: #f6f6f6;
       font-weight: bold;
+      background-color: #f6f6f6;
     }
   }
 
   hr {
-    border: none;
     height: 1px;
-    background-color: #e0e0e0;
     margin-top: 24px;
     margin-bottom: 24px;
+    background-color: #e0e0e0;
+    border: none;
   }
 
   img {

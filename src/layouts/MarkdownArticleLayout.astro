@@ -19,29 +19,41 @@ const {
 ---
 
 <BaseLayout title={title}>
-  <div class="mb-2">
-    <LinkText href={resolve('/articles')}>記事一覧</LinkText>
-  </div>
-
-  <section>
-    <header class="mb-4">
-      <h1>{title}</h1>
-
-      <p>URL: {url}</p>
-      <p>File: {file}</p>
-    </header>
-
-    <div class="markdown-content">
-      <slot />
+  <div class="card">
+    <div class="mb-2">
+      <LinkText href={resolve('/articles')}>記事一覧</LinkText>
     </div>
 
-    <p>Written on: {date}</p>
-  </section>
+    <section>
+      <header class="mb-4">
+        <h1>{title}</h1>
+
+        <p>URL: {url}</p>
+        <p>File: {file}</p>
+      </header>
+
+      <div class="markdown-content">
+        <slot />
+      </div>
+
+      <p>Written on: {date}</p>
+    </section>
+  </div>
 </BaseLayout>
 
 <style lang="scss">
   h1 {
     font-size: 32px;
     font-weight: bold;
+  }
+
+  .card {
+    max-width: 1000px;
+    padding: min(2rem, 3vw);
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    box-shadow: 0 0 8px rgb(0 0 0 / 10%);
   }
 </style>

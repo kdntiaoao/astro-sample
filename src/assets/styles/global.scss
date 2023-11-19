@@ -10,10 +10,11 @@ html {
 }
 
 body {
+  padding: min(1rem, 1vw);
   background-color: #f0f0f0;
 }
 
 code {
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+  font-family: Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New",
     monospace;
 }
